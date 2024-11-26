@@ -6,7 +6,7 @@ document.getElementById('addTaskButton').addEventListener('click', function() {
         const li = document.createElement('li');
         li.textContent = taskText;
 
-        document.getElementById('taskList').appendChild(li);
+        document.getElementById('numeroc').appendChild(li);
 
         // Tyhjennä syötekenttä
         taskInput.value = "";
