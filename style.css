@@ -1,3 +1,9 @@
 body{
   text_align: center;
 }
+p {
+  color: blue;
+}
+#addTaskButton {
+  padding: 500px;
+}
