@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Kuuntelija poista-painikkeelle
             deleteButton.addEventListener('click', function() {
-                li.remove();
+                li.style.animation = "fadeOut 0.3s forwards";
+                setTimeout(() => li.remove(), 300); // Poistaa tehtävän animaation jälkeen
             });
 
             // Tyhjennä syötekenttä
