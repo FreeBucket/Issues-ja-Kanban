@@ -1,16 +1,111 @@
-body{
-  height: 10em;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  margin: 0;
+  padding: 20px;
 }
+
+h1 {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
 p {
-  color: blue;
+  color: #666;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-out;
 }
+
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+input[type="text"]:focus {
+  transform: scale(1.05);
+  border-color: #3498db;
+}
+
 #addTaskButton {
-  padding: 500px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+#addTaskButton:hover {
+  background-color: #2980b9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s forwards;
+}
+
 button.deleteButton {
-  margin-left: 10px;
   color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+button.deleteButton:hover {
+  color: #e74c3c;
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
