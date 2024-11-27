@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Kuuntelija poista-painikkeelle
             deleteButton.addEventListener('click', function() {
-                li.style.animation = "fadeOut 0.3s forwards";
-                setTimeout(() => li.remove(), 300); // Poistaa tehtävän animaation jälkeen
+                li.remove();
             });
 
             // Tyhjennä syötekenttä
@@ -28,6 +27,34 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             alert("Syötä tehtävä ennen lisäystä.");
         }
+
+        
+// Funktio tallentamaan tehtävät localStorageen
+function saveTasks() {
+  const tasks = [];
+  
+  // Käydään läpi kaikki listan kohteet ja tallennetaan niiden tekstit
+  for (let task of taskList.children) {
+    tasks.push(task.textContent);
+  }
+
+  // Tallennetaan tehtävät localStorageen JSON-muodossa
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// Funktio lataamaan tehtävät localStoragesta
+function loadTasks() {
+  const savedTasks = localStorage.getItem("tasks");
+
+  if (savedTasks) {
+    const tasks = JSON.parse(savedTasks);
+
+    // Lisätään tallennetut tehtävät listalle
+    tasks.forEach(function(taskText) {
+      const newTask = document.createElement("li");
+      newTask.textContent = taskText;
+      taskList.appendChild(newTask);
     });
-});
+  }
+}
 
