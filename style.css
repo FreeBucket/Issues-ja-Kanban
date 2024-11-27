@@ -10,3 +10,7 @@ p {
 #addTaskButton {
   padding: 500px;
 }
+button.deleteButton {
+  margin-left: 10px;
+  color: red;
+}
